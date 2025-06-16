@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'react-toastify/dist/ReactToastify.css';
+
+@layer base {
+  html {
+    font-family: Inter, system-ui, sans-serif;
+  }
+  
+  body {
+    height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  #root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .task-priority-high {
+    border-left: 3px solid #FF6B6B;
+  }
+  
+  .task-priority-medium {
+    border-left: 3px solid #FFD93D;
+  }
+  
+  .task-priority-low {
+    border-left: 3px solid #4ECDC4;
+  }
+}
+
+/* Custom toast styles */
+.Toastify__toast {
+  border-radius: 8px;
+  font-family: Inter, sans-serif;
+}
+
+.Toastify__toast--success {
+  background-color: #4ECDC4;
+}
+
+.Toastify__toast--error {
+  background-color: #FF6B6B;
+}
+
+.Toastify__toast--warning {
+  background-color: #FFD93D;
+  color: #374151;
+}
+
+/* Checkbox animation */
+.task-checkbox {
+  position: relative;
+  transition: all 0.2s ease-out;
+}
+
+.task-checkbox.completed {
+  background-color: #4ECDC4;
+  border-color: #4ECDC4;
+}
+
+.task-checkbox.completing {
+  transform: scale(0.98);
+}
+
+/* Task completion animation */
+@keyframes checkmark-draw {
+  0% {
+    stroke-dashoffset: 16;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.checkmark {
+  stroke-dasharray: 16;
+  stroke-dashoffset: 16;
+  animation: checkmark-draw 0.3s ease-out forwards;
+}
