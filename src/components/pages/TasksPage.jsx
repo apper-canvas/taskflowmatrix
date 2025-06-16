@@ -186,7 +186,7 @@ function TasksPage() {
                   <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
                     <ApperIcon name="Clock" className="w-4 h-4 text-primary-600" />
                   </div>
-                  <span className="text-sm font-medium text-gray-700">Active</span>
+                  <span className="text-sm font-medium text-gray-700">Active correct</span>
                 </div>
                 <span className="text-sm font-semibold text-gray-900">{activeTasks.length}</span>
               </div>
